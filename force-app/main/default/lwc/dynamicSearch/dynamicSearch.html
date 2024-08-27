@@ -14,9 +14,11 @@
                 class="slds-m-top_medium">
             </lightning-button>
 
+
             <template if:true={error}>
                 <div class="slds-text-color_error slds-m-top_medium">{error}</div>
             </template>
+
 
             <!-- Only show the data table if search has been executed and there are results -->
             <template if:true={isSearchDone}>
@@ -25,11 +27,7 @@
                         key-field="recordId"
                         data={searchResults}
                         columns={columns}
-<<<<<<< HEAD
                         hide-checkbox-column
-=======
-                        hide-checkbox-column
->>>>>>> e98d4cc (stage)
                         class="slds-m-top_medium">
                     </lightning-datatable>
                 </template>
