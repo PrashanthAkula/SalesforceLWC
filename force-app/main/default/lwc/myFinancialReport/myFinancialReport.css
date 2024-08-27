@@ -1,0 +1,67 @@
+.slds-small-input-container {
+    margin-right: 1rem; /* Adjust spacing between inputs */
+}
+
+.small-input .slds-input {
+    width: 6rem; /* Set a smaller width for the inputs */
+}
+
+.slds-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.slds-col {
+    margin-bottom: 1rem; /* Add margin between rows if needed */
+}
+/* myFinancialReport.css */
+.input-field {
+    width: 100px; /* Adjust size as needed */
+}
+
+.field-container {
+    margin-top: 1rem;
+}
+
+.slds-grid {
+    margin-bottom: 1rem;
+}
+
+.slds-col {
+    padding: 0.5rem;
+}
+
+.field-container {
+    margin-top: 1rem;
+}
+
+.slds-grid {
+    margin-bottom: 1rem;
+}
+
+.slds-col {
+    padding: 0.5rem;
+}
+
+.slds-text-title_bold {
+    font-weight: bold;
+}
+
+.slds-m-bottom_small {
+    margin-bottom: 0.5rem;
+}
+.field-container {
+    margin-bottom: 1rem;
+}
+
+.slds-grid_vertical-align-start {
+    align-items: flex-start;
+}
+
+.slds-m-around_medium {
+    margin: 1rem;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}

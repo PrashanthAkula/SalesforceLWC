@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Dynamic Search">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Search Term"
+                value={searchTerm}
+                onchange={handleInputChange}
+                placeholder="Enter search term">
+            </lightning-input>
+            <lightning-button
+                variant="neutral"
+                label="Search"
+                onclick={handleSearch}
+                class="slds-m-top_medium">
+            </lightning-button>
+
+            <template if:true={error}>
+                <div class="slds-text-color_error slds-m-top_medium">{error}</div>
+            </template>
+
+            <!-- Only show the data table if search has been executed and there are results -->
+            <template if:true={isSearchDone}>
+                <template if:true={searchResults.length}>
+                    <lightning-datatable
+                        key-field="recordId"
+                        data={searchResults}
+                        columns={columns}
+                        hide-checkbox-column
+                        class="slds-m-top_medium">
+                    </lightning-datatable>
+                </template>
+                <template if:false={searchResults.length}>
+                    <div class="slds-text-align_center slds-m-top_medium">No records found.</div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

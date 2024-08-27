@@ -1,0 +1,114 @@
+<template>
+    <lightning-card title="Financial Report">
+        <!-- Date and Frequency Inputs -->
+        <div class="slds-m-around_medium">
+            <lightning-input 
+                type="date" 
+                label="Start Date" 
+                value={startDate} 
+                onchange={handleStartDateChange}>
+            </lightning-input>
+
+            <lightning-input 
+                type="date" 
+                label="End Date" 
+                value={endDate} 
+                onchange={handleEndDateChange}>
+            </lightning-input>
+
+            <lightning-combobox 
+                label="Frequency" 
+                value={frequency} 
+                options={frequencyOptions} 
+                onchange={handleFrequencyChange}>
+            </lightning-combobox>
+        </div>
+
+        <!-- Error Message -->
+        <template if:true={errorMessage}>
+            <div class="slds-text-color_error slds-m-around_medium">
+                {errorMessage}
+            </div>
+        </template>
+
+        <!-- Revenue Fields -->
+        <template if:true={inputFields.length}>
+            <div class="field-container slds-m-around_medium">
+                <h3 class="slds-text-heading_small">Revenue</h3>
+                <div class="slds-grid slds-wrap">
+                    <template for:each={inputFields} for:item="field">
+                        <div key={field.id} class="slds-col slds-size_1-of-2 slds-m-bottom_small">
+                            <lightning-input 
+                                type="number" 
+                                label={field.label} 
+                                data-id={field.id} 
+                                value={field.value} 
+                                onchange={handleInputChange}>
+                            </lightning-input>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+        <!-- Charged Days Fields -->
+        <template if:true={chargedDaysFields.length}>
+            <div class="field-container slds-m-around_medium">
+                <h3 class="slds-text-heading_small">Charged Days</h3>
+                <div class="slds-grid slds-wrap">
+                    <template for:each={chargedDaysFields} for:item="field">
+                        <div key={field.id} class="slds-col slds-size_1-of-2 slds-m-bottom_small">
+                            <lightning-input 
+                                type="number" 
+                                label={field.label} 
+                                data-id={field.id} 
+                                value={field.value} 
+                                onchange={handleInputChange}>
+                            </lightning-input>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+        <!-- Non-Billable Days Fields -->
+        <template if:true={nonBillableDaysFields.length}>
+            <div class="field-container slds-m-around_medium">
+                <h3 class="slds-text-heading_small">Non-Billable Days</h3>
+                <div class="slds-grid slds-wrap">
+                    <template for:each={nonBillableDaysFields} for:item="field">
+                        <div key={field.id} class="slds-col slds-size_1-of-2 slds-m-bottom_small">
+                            <lightning-input 
+                                type="number" 
+                                label={field.label} 
+                                data-id={field.id} 
+                                value={field.value} 
+                                onchange={handleInputChange}>
+                            </lightning-input>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+        <!-- Total Calculation -->
+        <template if:true={showTotal}>
+            <div class="slds-m-around_medium">
+                <h3 class="slds-text-heading_small">Total</h3>
+                <lightning-formatted-number 
+                    value={total} 
+                    format-style="currency" 
+                    currency-code="USD">
+                </lightning-formatted-number>
+            </div>
+        </template>
+
+        <!-- Calculate Button -->
+        <div class="slds-m-around_medium">
+            <lightning-button 
+                label="Calculate Total" 
+                onclick={handleCalculateTotal}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

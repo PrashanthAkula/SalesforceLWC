@@ -1,0 +1,15 @@
+/* Ensure that table borders do not overlap */
+.slds-table {
+    border-collapse: collapse; /* Avoid double borders where cells meet */
+}
+
+/* Add vertical lines between columns */
+.slds-table th, .slds-table td {
+    border-right: 1px solid #d8dde6; /* Light gray border for vertical lines */
+    padding: 0.5rem; /* Adjust padding as needed */
+}
+
+/* Remove the right border from the last column */
+.slds-table th:last-child, .slds-table td:last-child {
+    border-right: none;
+}

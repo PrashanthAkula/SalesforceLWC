@@ -1,0 +1,32 @@
+/* Ensure the modal container adjusts to content height */
+.slds-modal__container {
+    background-color: #ffffff; /* White background */
+    border-radius: 0.25rem; /* Rounded corners */
+    padding: 1rem; /* Padding around content */
+    max-height: 70vh; /* Max height of 80% of viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure modal body handles overflow */
+.slds-modal__body {
+    overflow-y: auto; /* Allow vertical scrolling */
+    flex: 1; /* Allow body to grow and shrink */
+}
+
+/* Ensure the modal header and footer are properly sized */
+.slds-modal__header, .slds-modal__footer {
+    padding: 1rem; /* Padding around header and footer */
+}
+
+/* Ensure the modal itself adjusts to fit content */
+.slds-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center modal vertically */
+}
+
+/* Optional: Ensure backdrop has a proper style */
+.slds-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent */
+}

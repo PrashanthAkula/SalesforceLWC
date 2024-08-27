@@ -1,0 +1,9 @@
+.scrollable-container {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+.loading-spinner {
+    text-align: center;
+    margin: 1rem;
+}

@@ -1,0 +1,90 @@
+.slds-modal__container {
+    max-width: 50rem; /* Adjust modal width as needed */
+}
+
+.slds-button_icon-inverse {
+    background-color: #f3f3f3; /* Adjust background color */
+}
+
+.slds-m-around_medium {
+    margin: 1.5rem; /* Adjust margins as needed */
+}
+
+.slds-text-align_center {
+    text-align: center;
+}
+
+.slds-card {
+    border-radius: 0.25rem; /* Adjust card border radius */
+}
+
+.slds-backdrop_open {
+    background-color: rgba(0, 0, 0, 0.5); /* Darken backdrop */
+}
+/* Styling for the modal as a card */
+.slds-modal__container {
+    max-width: 40rem; /* Adjust the size as needed for a medium card */
+    width: 100%;
+    margin: 0 auto; /* Center the modal horizontally */
+}
+
+.slds-modal {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.slds-card {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.slds-card__header,
+.slds-card__body,
+.slds-card__footer {
+    padding: 1rem;
+}
+
+.slds-modal__header {
+    border-bottom: 1px solid #d8dde6;
+}
+
+.slds-modal__footer {
+    border-top: 1px solid #d8dde6;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.slds-m-around_medium {
+    margin: 1rem;
+}
+
+.slds-m-left_small {
+    margin-left: 0.5rem;
+}
+
+.slds-backdrop {
+    opacity: 0.5; /* Dim the background */
+}
+
+/* Ensure the modal container height adjusts to fit its content */
+.slds-modal__container {
+    max-height: 80vh; /* Adjust this value as needed to fit the screen comfortably */
+    overflow: auto; /* Allow scrolling if content exceeds max height */
+    width: 100%;
+    max-width: 500px; /* Optionally limit the width of the modal */
+}
+
+/* Optional: Adjust modal backdrop */
+.slds-backdrop {
+    opacity: 0.5; /* Change this to fit your design */
+}
+
+/* Optional: Add margin to body to avoid overflow issues */
+.slds-modal__body {
+    margin: 0;
+    padding: 1rem; /* Adjust padding as needed */
+}
+
+

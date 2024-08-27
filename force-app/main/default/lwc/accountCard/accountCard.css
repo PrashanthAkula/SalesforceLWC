@@ -1,0 +1,46 @@
+/* Styling for the modal as a card */
+.slds-modal__container {
+    max-width: 40rem; /* Adjust the size as needed for a medium card */
+    width: 100%;
+    margin: 0 auto; /* Center the modal horizontally */
+}
+
+.slds-modal {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.slds-card {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.slds-card__header,
+.slds-card__body,
+.slds-card__footer {
+    padding: 1rem;
+}
+
+.slds-modal__header {
+    border-bottom: 1px solid #d8dde6;
+}
+
+.slds-modal__footer {
+    border-top: 1px solid #d8dde6;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.slds-m-around_medium {
+    margin: 1rem;
+}
+
+.slds-m-left_small {
+    margin-left: 0.5rem;
+}
+
+.slds-backdrop {
+    opacity: 0.5; /* Dim the background */
+}

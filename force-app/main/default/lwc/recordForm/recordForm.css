@@ -1,0 +1,5 @@
+/* Ensure the form is styled for scrolling */
+.lightning-record-edit-form {
+    max-height: 90vh; /* Adjust based on your design */
+    overflow-y: auto; /* Enable vertical scrolling */
+}

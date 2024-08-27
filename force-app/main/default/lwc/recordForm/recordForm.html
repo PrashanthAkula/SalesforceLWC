@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title={objectLabel}>
+        <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleSuccess}>
+            <lightning-messages></lightning-messages>
+            <div class="form-grid">
+                <template for:each={fields} for:item="field">
+                    <div key={field.fieldApiName} class="form-field">
+                        <lightning-input-field field-name={field.fieldApiName}></lightning-input-field>
+                    </div>
+                </template>
+            </div>
+            <lightning-button type="submit" label="Save" onclick={handleSubmit}></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Accounts">
+        <div class="scrollable-container" onscroll={handleScroll}>
+            <lightning-datatable
+                key-field="id"
+                data={accounts}
+                columns={columns}
+                hide-checkbox-column
+                show-row-number-column
+                
+            ></lightning-datatable>
+            <template if:true={isLoading}>
+                <div class="loading-spinner">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

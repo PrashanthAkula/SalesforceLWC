@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed> <!-- Make the component available for use -->
+    <targets>
+        <target>lightning__RecordPage</target> <!-- Allows the component to be used on record pages -->
+        <target>lightning__AppPage</target> <!-- Allows the component to be used on app pages -->
+      <!--  <target>lightning__RecordHome</target>  Allows the component to be used on record home pages -->
+        <target>lightning__HomePage</target> <!-- Allows the component to be used on home pages -->
+    </targets>
+
+</LightningComponentBundle>

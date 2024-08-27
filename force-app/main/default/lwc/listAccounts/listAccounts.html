@@ -1,0 +1,79 @@
+<template>
+    <lightning-card title="Accounts Table">
+        <div class="slds-scrollable_y">
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout">
+                <thead>
+                    <tr class="slds-text-title_bold">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Name">Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Annual Revenue">Annual Revenue</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Type">Type</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Billing City">Billing City</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Actions">Actions</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={accounts} for:item="account">
+                        <tr key={account.Id}>
+                            <td>
+                                <template if:true={account.isEditMode}>
+                                    <lightning-input type="text" name="Name" value={account.Name} data-id={account.Id} onchange={handleInputChange}></lightning-input>
+                                </template>
+                                <template if:false={account.isEditMode}>
+                                    {account.Name}
+                                </template>
+                            </td>
+                            <td>
+                                <template if:true={account.isEditMode}>
+                                    <lightning-input type="number" name="AnnualRevenue" value={account.AnnualRevenue} data-id={account.Id} onchange={handleInputChange}></lightning-input>
+                                </template>
+                                <template if:false={account.isEditMode}>
+                                    {account.AnnualRevenue}
+                                </template>
+                            </td>
+                            <td>
+                                <template if:true={account.isEditMode}>
+                                    <lightning-combobox
+                                        name="Type"
+                                        value={account.Type}
+                                        data-id={account.Id}
+                                        options={picklistOptions}
+                                        onchange={handleInputChange}>
+                                    </lightning-combobox>
+                                </template>
+                                <template if:false={account.isEditMode}>
+                                    {account.Type}
+                                </template>
+                            </td>
+                            <td>
+                                <template if:true={account.isEditMode}>
+                                    <lightning-input type="text" name="BillingCity" value={account.BillingCity} data-id={account.Id} onchange={handleInputChange}></lightning-input>
+                                </template>
+                                <template if:false={account.isEditMode}>
+                                    {account.BillingCity}
+                                </template>
+                            </td>
+                            <td>
+                                <template if:true={account.isEditMode}>
+                                    <button class="slds-button slds-button_neutral" onclick={handleSave}>Save</button>
+                                </template>
+                                <template if:false={account.isEditMode}>
+                                    <button class="slds-button slds-button_neutral" onclick={handleEdit} data-id={account.Id}>Edit</button>
+                                </template>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>
