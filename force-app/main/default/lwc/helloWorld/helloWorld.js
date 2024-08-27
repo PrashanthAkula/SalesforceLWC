@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
 
 export default class HelloWorld extends LightningElement {
-    Name='Salesforce Development LWC';
+    Name='Salesforce LWC';
 }
