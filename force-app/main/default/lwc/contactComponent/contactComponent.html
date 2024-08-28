@@ -1,0 +1,51 @@
+<template>
+    <!-- Button to open the modal -->
+    <lightning-button label={buttonLabel} onclick={handleButtonClick}></lightning-button>
+
+    <!-- Modal/Popup -->
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close"
+                            onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">{modalTitle}</h2>
+                </header>
+                <div class="slds-modal__body">
+                    <!-- Input Fields -->
+                    <lightning-input label="First Name" value={firstName} onchange={handleInputChange} data-id="firstName"></lightning-input>
+                    <lightning-input label="Last Name" value={lastName} onchange={handleInputChange} data-id="lastName" required></lightning-input>
+                    <lightning-input label="Mobile Phone" value={mobile} onchange={handleInputChange} data-id="mobilePhone" required></lightning-input>
+                    <lightning-input label="Phone" value={phone} onchange={handleInputChange} data-id="phone"></lightning-input>
+
+                    <!-- Account Field -->
+                    <template if:true={isRecordPage}>
+                        <!-- Display Account Name as Read-Only -->
+                        <lightning-input label="Account" value={accountName} readonly></lightning-input>
+                    </template>
+                    <template if:false={isRecordPage}>
+                        <!-- Allow Selection of Account -->
+                        <lightning-combobox
+                            label="Account"
+                            value={accountId}
+                            placeholder="Select an Account"
+                            options={accountOptions}
+                            onchange={handleInputChange}
+                            data-id="accountId"
+                            required>
+                        </lightning-combobox>
+                    </template>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={handleCloseModal}></lightning-button>
+                    <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

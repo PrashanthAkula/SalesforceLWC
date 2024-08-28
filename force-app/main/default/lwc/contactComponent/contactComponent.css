@@ -1,0 +1,42 @@
+/* Styles for the modal container */
+.slds-modal__container {
+    background-color: white; /* Set background color to white */
+    border-radius: 0.25rem; /* Optional: Add some border radius */
+    max-width: 50rem; /* Set a maximum width for medium size */
+    width: 100%; /* Ensure the modal container can adapt to available space */
+    margin: auto; /* Center horizontally */
+    max-height: 80vh; /* Limit the height to a percentage of viewport height */
+    overflow-y: auto; /* Add scroll if content exceeds max height */
+}
+
+/* Styles for the modal header */
+.slds-modal__header {
+    background-color: #f4f6f9; /* Optional: Light gray background for header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Styles for the modal close button */
+.slds-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+/* Styles for the modal footer */
+.slds-modal__footer {
+    background-color: #f4f6f9; /* Optional: Light gray background for footer */
+}
+
+/* Styles for the modal backdrop */
+.slds-backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Adjust backdrop color for better contrast */
+}
+
+/* Ensure modal is vertically centered */
+.slds-modal.slds-fade-in-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
